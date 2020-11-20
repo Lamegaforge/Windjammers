@@ -28,7 +28,7 @@ class HomeController extends Controller
             ->paginate(6);
 
         return View::make('home.posts', [
-            'post' => $post->toArray(),
+            'posts' => $posts,
         ]);
     }
 
@@ -40,7 +40,7 @@ class HomeController extends Controller
             ->firstOrFail();
 
         return View::make('home.post', [
-            'post' => $post->toArray(),
+            'post' => $post,
         ]);
     }
 }
