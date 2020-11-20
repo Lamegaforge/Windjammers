@@ -17,7 +17,7 @@
         </h2>
         <div class="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
             @foreach ($posts as $post)
-            <x-post :cover="asset('images/beach.jpg')" :title="$post['title']" :extract="$post['highlight']" :date="$post['published_at']" :slug="$post['slug']" />
+            <x-post-card :post="$post" />
             @endforeach
         </div>
         <div class="mt-12 text-center">
