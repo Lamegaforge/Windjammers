@@ -23,6 +23,7 @@ Route::group([
 ], function() { 
 
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('about', 'HomeController@about')->name('about');
 
     Route::prefix('posts')->as('posts.')->group(function () {
         Route::get('/', 'PostController@index')->name('index');
