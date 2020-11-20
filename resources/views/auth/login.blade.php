@@ -1,4 +1,4 @@
-<form action='/fr/auth/attempt' method='post'>
+<form action="{{LaravelLocalization::localizeUrl('auth/attempt')}}" method='post'>
 	@csrf
     <div>
         <input type='text' name='email' value='aloy@gmail.com'>
