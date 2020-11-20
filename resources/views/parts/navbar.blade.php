@@ -14,13 +14,13 @@
                             Wiki
                         </a> -->
                     <a href="#" :class="{ 'text-gray-500 hover:text-gray-700': scrolled }" class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-white transition duration-200 ease-in-out border-b-2 border-transparent hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-                        Wiki
+                        @lang('navbar.wiki')
                     </a>
                     <a href="#" :class="{ 'text-gray-500 hover:text-gray-700': scrolled }" class="inline-flex items-center px-1 pt-1 ml-8 text-sm font-medium leading-5 text-white transition duration-100 ease-in-out border-b-2 border-transparent hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-                        Actualités
+                        @lang('navbar.posts')
                     </a>
                     <a href="#" :class="{ 'text-gray-500 hover:text-gray-700': scrolled }" class="inline-flex items-center px-1 pt-1 ml-8 text-sm font-medium leading-5 text-white transition duration-100 ease-in-out border-b-2 border-transparent hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-                        Agenda
+                        @lang('navbar.agenda')
                     </a>
                     <!-- <a href="#" class="inline-flex items-center px-1 pt-1 ml-8 text-sm font-medium leading-5 text-gray-500 transition duration-150 ease-in-out border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
                         Actualités
