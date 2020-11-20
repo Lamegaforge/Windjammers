@@ -14,7 +14,8 @@
         "graham-campbell/markdown": "13.1",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "mcamara/laravel-localization": "^1.6"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
