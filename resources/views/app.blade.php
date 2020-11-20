@@ -1,3 +1,23 @@
+@php
+$links = [
+    [
+        "Wiki",
+        "#",
+       false,
+    ],
+    [
+        "Actualités",
+        route('home.posts'),
+        request()->routeIs('home.posts'),
+    ],
+    [
+        "Agenda",
+        "#",
+        false,
+    ],
+];
+@endphp
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -11,7 +31,7 @@
 </head>
 
 <body class="antialiased">
-    @include('parts.navbar')
+    @include('parts.navbar',['isHome' => request()->routeIs('home'), 'links' => $links])
     <main class="min-h-screen font-body">
         @yield('content')
     </main>

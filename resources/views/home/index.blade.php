@@ -11,17 +11,17 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" class="absolute left-0 z-10 -mt-4 bottom-full">
         <path fill="#f9fafb" fill-opacity="1" d="M0,128L60,117.3C120,107,240,85,360,101.3C480,117,600,171,720,176C840,181,960,139,1080,112C1200,85,1320,75,1380,69.3L1440,64L1440,200L1380,200C1200,200,1200,200,1080,200C960,200,840,200,720,200C600,200,480,200,360,200C240,200,120,200,60,200L0,200Z"></path>
     </svg>
-    <div class="relative z-20 max-w-lg mx-auto lg:max-w-7xl">
+    <div class="relative z-20 mx-auto lg:max-w-7xl">
         <h2 class="text-3xl font-extrabold tracking-tight text-gray-800 sm:text-4xl">
             @lang('home.last_posts')
         </h2>
-        <div class="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
+        <div class="grid gap-5 mx-auto mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-none">
             @foreach ($posts as $post)
             <x-post-card :post="$post" />
             @endforeach
         </div>
         <div class="mt-12 text-center">
-            <a href="" class="px-6 py-3 text-base font-semibold text-blue-700 bg-blue-100 rounded-lg">@lang('home.more_posts')</a>
+            <a href="{{route('home.posts')}}" class="px-6 py-3 text-base font-semibold text-blue-700 bg-blue-100 rounded-lg">@lang('home.more_posts')</a>
         </div>
     </div>
 </section>
