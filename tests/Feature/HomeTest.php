@@ -52,4 +52,15 @@ class HomeTest extends TestCase
         $response
             ->assertStatus(200);
     }
+
+    /**
+     * @test
+     */
+    public function about()
+    {
+        $response = $this->get('about');
+
+        $response
+            ->assertStatus(200);
+    }
 }

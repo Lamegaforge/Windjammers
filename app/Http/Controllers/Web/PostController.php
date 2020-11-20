@@ -16,7 +16,7 @@ class PostController extends Controller
             ->orderByDesc('published_at')
             ->paginate(6);
 
-        return View::make('home.posts', [
+        return View::make('posts.index', [
             'posts' => $posts,
         ]);
     }
@@ -28,7 +28,7 @@ class PostController extends Controller
             ->orWhere('slug', $request->hook)
             ->firstOrFail();
 
-        return View::make('home.post', [
+        return View::make('posts.show', [
             'post' => $post,
         ]);
     }

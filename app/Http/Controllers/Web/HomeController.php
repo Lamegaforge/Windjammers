@@ -21,4 +21,9 @@ class HomeController extends Controller
             'posts' => $posts,
         ]);
     }
+
+    public function about(Request $request)
+    {
+        return View::make('home.about');
+    }
 }
