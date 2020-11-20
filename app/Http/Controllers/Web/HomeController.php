@@ -12,6 +12,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $posts = Post::displayable()
+            ->localized()
             ->orderByDesc('published_at')
             ->limit(6)
             ->get();
@@ -24,11 +25,12 @@ class HomeController extends Controller
     public function posts(Request $request)
     {
         $posts = Post::displayable()
+            ->localized()
             ->orderByDesc('published_at')
             ->paginate(6);
 
         return View::make('home.posts', [
-            'post' => $post->toArray(),
+            'posts' => $posts,
         ]);
     }
 
@@ -40,7 +42,7 @@ class HomeController extends Controller
             ->firstOrFail();
 
         return View::make('home.post', [
-            'post' => $post->toArray(),
+            'post' => $post,
         ]);
     }
 }

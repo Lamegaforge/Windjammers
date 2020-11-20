@@ -29,6 +29,7 @@ class PostFactory extends Factory
             'highlight' => $this->faker->paragraph,
             'content' => $content,
             'active' => false,
+            'language' => 'fr',
             'published_at' => null,
         ];
     }
