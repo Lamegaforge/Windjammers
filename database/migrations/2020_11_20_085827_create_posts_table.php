@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('slug');
             $table->longText('content');
             $table->boolean('active')->default(false);
+            $table->text('language');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
