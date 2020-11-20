@@ -23,8 +23,11 @@ Route::group([
 ], function() { 
 
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('posts', 'HomeController@posts')->name('home.posts');
-    Route::get('posts/{hook}', 'HomeController@post')->name('home.post');
+
+    Route::prefix('posts')->as('posts.')->group(function () {
+        Route::get('/', 'PostController@index')->name('index');
+        Route::get('{hook}', 'PostController@show')->name('show');
+    });
 
     Route::prefix('auth')->as('auth.')->group(function () {
         Route::middleware('guest')->group(function () {

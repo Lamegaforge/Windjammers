@@ -21,28 +21,4 @@ class HomeController extends Controller
             'posts' => $posts,
         ]);
     }
-
-    public function posts(Request $request)
-    {
-        $posts = Post::displayable()
-            ->localized()
-            ->orderByDesc('published_at')
-            ->paginate(6);
-
-        return View::make('home.posts', [
-            'posts' => $posts,
-        ]);
-    }
-
-    public function post(Request $request)
-    {
-        $post = Post::displayable()
-            ->where('id', $request->hook)
-            ->orWhere('slug', $request->hook)
-            ->firstOrFail();
-
-        return View::make('home.post', [
-            'post' => $post,
-        ]);
-    }
 }

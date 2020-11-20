@@ -1,4 +1,4 @@
-<a href="{{route('home.post', $post->slug)}}" class="flex flex-col overflow-hidden transition-all duration-300 ease-in-out transform rounded-lg shadow-lg md:hover:-translate-y-2 md:hover:shadow-xl">
+<a href="{{route('posts.show', $post->slug)}}" class="flex flex-col overflow-hidden transition-all duration-300 ease-in-out transform rounded-lg shadow-lg md:hover:-translate-y-2 md:hover:shadow-xl">
     <div class="flex-shrink-0 ">
         <img class="object-cover w-full h-48" src="{{$post->thumbnail}}" alt="">
     </div>
