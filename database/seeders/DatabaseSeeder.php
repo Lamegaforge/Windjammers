@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\Post;
 use Illuminate\Database\Seeder;
 
@@ -16,5 +17,9 @@ class DatabaseSeeder extends Seeder
     {
         Post::factory(10)->english()->published()->create();
         Post::factory(10)->french()->published()->create();
+
+        User::factory()->create([
+            'email' => 'aloy@gmail.com',
+        ]);
     }
 }

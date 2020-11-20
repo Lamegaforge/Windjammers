@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Web;
 use View;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
