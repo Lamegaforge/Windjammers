@@ -16,12 +16,9 @@
             Dernières actualités
         </h2>
         <div class="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
-            <x-post :cover="asset('images/beach.jpg')" title="Windjammers 2 : la démo du Steam Festival" extract="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum." date="Mar 16, 2020" />
-            <x-post :cover="asset('images/beach.jpg')" title="Champions Cup, classement final" extract="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum." date="Mar 16, 2020" />
-            <x-post :cover="asset('images/beach.jpg')" title="Champions Cup, 8 tournois en ligne sur PS4" extract="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum." date="Mar 16, 2020" />
-            <x-post :cover="asset('images/beach.jpg')" title="Windjammers 2 : la démo du Steam Festival" extract="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum." date="Mar 16, 2020" />
-            <x-post :cover="asset('images/beach.jpg')" title="Champions Cup, classement final" extract="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum." date="Mar 16, 2020" />
-            <x-post :cover="asset('images/beach.jpg')" title="Champions Cup, 8 tournois en ligne sur PS4" extract="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum." date="Mar 16, 2020" />
+            @foreach ($posts as $post)
+            <x-post-card :post="$post" />
+            @endforeach
         </div>
         <div class="mt-12 text-center">
             <a href="" class="px-6 py-3 text-base font-semibold text-blue-700 bg-blue-100 rounded-lg">Plus d'actualités</a>

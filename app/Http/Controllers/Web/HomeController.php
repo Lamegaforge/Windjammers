@@ -17,7 +17,7 @@ class HomeController extends Controller
             ->get();
 
         return View::make('home.index', [
-            'posts' => $posts->toArray(),
+            'posts' => $posts,
         ]);
     }
 
