@@ -2,7 +2,7 @@
 @section('content')
 <section class="relative flex items-center h-screen min-h-450px">
     <div class="relative z-10 max-w-screen-md px-4 mx-auto sm:px-6">
-        <h1 class="text-white font-display text-shadow">Incredibly fun and intensely addictive, Windjammers, the perfect blend between sports and fighting game, is the adrenaline rush you’re looking for!</h1>
+        <h1 class="text-white font-display text-shadow">@lang('home.hightlight')</h1>
     </div>
     <div class="scanlines"></div>
     <div x-data="parallaxBackground()" x-ref="bg" @scroll.window="handleScroll" class="absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover -z-1" style="background-image: url('{{ asset('images/beach.jpg')}}');background-position-x: center;"></div>
@@ -13,7 +13,7 @@
     </svg>
     <div class="relative z-20 mx-auto lg:max-w-7xl">
         <h2 class="text-3xl font-extrabold tracking-tight text-gray-800 sm:text-4xl">
-            Dernières actualités
+            @lang('home.last_posts')
         </h2>
         <div class="grid gap-5 mx-auto mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-none">
             @foreach ($posts as $post)
@@ -21,7 +21,7 @@
             @endforeach
         </div>
         <div class="mt-12 text-center">
-            <a href="{{route('home.posts')}}" class="px-6 py-3 text-base font-semibold text-blue-700 bg-blue-100 rounded-lg">Plus d'actualités</a>
+            <a href="{{route('home.posts')}}" class="px-6 py-3 text-base font-semibold text-blue-700 bg-blue-100 rounded-lg">@lang('home.more_posts')</a>
         </div>
     </div>
 </section>
