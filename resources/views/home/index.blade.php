@@ -1,7 +1,7 @@
 @extends('app')
 @section('content')
 <section class="relative flex items-center h-screen min-h-450px">
-    <div class="relative z-10 max-w-screen-md px-4 mx-auto sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
+    <div class="relative z-10 max-w-screen-md px-4 mx-auto sm:px-6">
         <h1 class="text-white font-display text-shadow">Incredibly fun and intensely addictive, Windjammers, the perfect blend between sports and fighting game, is the adrenaline rush you’re looking for!</h1>
     </div>
     <div class="scanlines"></div>
