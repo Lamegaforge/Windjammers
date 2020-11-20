@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('posts', 'HomeController@posts')->name('home.posts');
-Route::get('posts/{hook}', 'HomeController@post')->name('home.post');
+Route::group([
+	'prefix' => LaravelLocalization::setLocale(),
+	'middleware' => [
+		'localeSessionRedirect', 
+		'localizationRedirect', 
+		'localeViewPath',
+	],
+], function() { 
+	Route::get('/', 'HomeController@index')->name('home');
+	Route::get('posts', 'HomeController@posts')->name('home.posts');
+	Route::get('posts/{hook}', 'HomeController@post')->name('home.post');
+});
