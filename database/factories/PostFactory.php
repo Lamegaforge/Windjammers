@@ -34,6 +34,24 @@ class PostFactory extends Factory
         ];
     }
 
+    public function french()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'language' => 'fr',
+            ];
+        });
+    }
+
+    public function english()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'language' => 'en',
+            ];
+        });
+    }
+
     public function published()
     {
         return $this->state(function (array $attributes) {
