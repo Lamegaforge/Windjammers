@@ -1,18 +1,18 @@
 @php
 $links = [
     [
-        "Wiki",
-        "#",
-       false,
+        'Wiki',
+        '#',
+        false,
     ],
     [
-        "Actualités",
-        route('home.posts'),
-        request()->routeIs('home.posts'),
+        'Actualités',
+        route('posts.index'),
+        request()->routeIs('posts.index'),
     ],
     [
-        "Agenda",
-        "#",
+        'Agenda',
+        '#',
         false,
     ],
 ];
@@ -36,7 +36,5 @@ $links = [
         @yield('content')
     </main>
     @include('parts.footer')
-
 </body>
-
 </html>

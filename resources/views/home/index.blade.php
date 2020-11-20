@@ -21,7 +21,7 @@
             @endforeach
         </div>
         <div class="mt-12 text-center">
-            <a href="{{route('home.posts')}}" class="px-6 py-3 text-base font-semibold text-blue-700 bg-blue-100 rounded-lg">@lang('home.more_posts')</a>
+            <a href="{{route('posts.index')}}" class="px-6 py-3 text-base font-semibold text-blue-700 bg-blue-100 rounded-lg">@lang('home.more_posts')</a>
         </div>
     </div>
 </section>
