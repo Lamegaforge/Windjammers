@@ -30,6 +30,11 @@ class PostCard extends Component
         return Carbon::parse($this->post->published_at)->isoFormat('LL');
     }
 
+    public function thumbnail(): string
+    {
+        return $this->post->thumbnail ?? asset('images/small_beach.jpg');
+    }
+
     /**
      * Get the view / contents that represent the component.
      *

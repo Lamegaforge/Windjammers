@@ -27,11 +27,30 @@ class PostFactory extends Factory
             'title' => $this->faker->words($nb = 4, $asText = true),
             'slug' => $this->faker->unique()->slug(),
             'highlight' => $this->faker->paragraph,
+            'thumbnail' => $this->faker->imageUrl($width = 640, $height = 480, 'cats'),
             'content' => $content,
             'active' => false,
             'language' => 'fr',
             'published_at' => null,
         ];
+    }
+
+    public function french()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'language' => 'fr',
+            ];
+        });
+    }
+
+    public function english()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'language' => 'en',
+            ];
+        });
     }
 
     public function published()

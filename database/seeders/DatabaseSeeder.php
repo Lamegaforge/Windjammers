@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Post::factory(10)->published()->create();
+        Post::factory(10)->english()->published()->create();
+        Post::factory(10)->french()->published()->create();
     }
 }

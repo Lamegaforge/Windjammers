@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->text('title');
             $table->text('highlight');
+            $table->text('thumbnail')->nullable();
             $table->text('slug');
             $table->longText('content');
             $table->boolean('active')->default(false);
