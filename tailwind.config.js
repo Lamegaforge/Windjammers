@@ -20,6 +20,9 @@ module.exports = {
                 '0.5': '0.125rem',
                 '2.5': '0.625rem'
             },
+            minHeight: {
+                '450px': '450px'
+            },
             maxWidth: {
                 '7xl': '80rem'
             },

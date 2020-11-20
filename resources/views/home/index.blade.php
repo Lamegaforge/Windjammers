@@ -1,6 +1,6 @@
 @extends('app')
 @section('content')
-<section class="relative flex items-center h-screen">
+<section class="relative flex items-center h-screen min-h-450px">
     <div class="relative z-10 max-w-screen-md px-4 mx-auto sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
         <h1 class="text-white font-display text-shadow">Incredibly fun and intensely addictive, Windjammers, the perfect blend between sports and fighting game, is the adrenaline rush you’re looking for!</h1>
     </div>
@@ -24,7 +24,7 @@
             <x-post :cover="asset('images/beach.jpg')" title="Champions Cup, 8 tournois en ligne sur PS4" extract="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum." date="Mar 16, 2020" />
         </div>
         <div class="mt-12 text-center">
-            <a href="" class="px-6 py-3 text-base font-semibold text-purple-700 bg-purple-100 rounded-lg">Plus d'actualités</a>
+            <a href="" class="px-6 py-3 text-base font-semibold text-blue-700 bg-blue-100 rounded-lg">Plus d'actualités</a>
         </div>
     </div>
 </section>

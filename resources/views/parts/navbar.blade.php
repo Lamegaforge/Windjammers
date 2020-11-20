@@ -4,13 +4,13 @@
             <div class="flex">
                 <div class="flex items-center flex-shrink-0">
                     <img class="block w-auto h-8 mr-2" src="{{asset('images/logo-disc.png')}}" alt="Windjammers France logo">
-                    <a href="/" :class="{ 'gradient-text':  scrolled }" class="flex-col items-center justify-center hidden ml-2 font-bold text-white uppercase transition duration-200 ease-in-out sm:flex font-display">
+                    <a href="/" :class="{ 'gradient-text':  scrolled }" class="flex flex-col items-center justify-center ml-2 font-bold text-white uppercase transition duration-200 ease-in-out font-display">
                         <span class="text-sm">Windjammers</span>
                         <span style="font-size: 0.5rem">France</span>
                     </a>
                 </div>
                 <div class="hidden sm:ml-8 sm:flex">
-                    <!-- <a href="#" class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-gray-900 transition duration-150 ease-in-out border-b-2 border-indigo-500 focus:outline-none focus:border-indigo-700">
+                    <!-- <a href="#" class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-gray-900 transition duration-150 ease-in-out border-b-2 border-blue-500 focus:outline-none focus:border-blue-700">
                             Wiki
                         </a> -->
                     <a href="#" :class="{ 'text-gray-500 hover:text-gray-700': scrolled }" class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-white transition duration-200 ease-in-out border-b-2 border-transparent hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div> -->
-            <div class="flex items-center -mr-2 sm:hidden">
+            <div class="flex items-center -mt-1 -mr-2 sm:hidden">
                 <!-- Mobile menu button -->
                 <button @click="open = !open" class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" x-bind:aria-label="open ? 'Close main menu' : 'Main menu'" aria-label="Main menu" x-bind:aria-expanded="open">
 
@@ -60,7 +60,7 @@
 
     <div x-description="Mobile menu, toggle classes based on menu state." x-state:on="Menu open" x-state:off="Menu closed" :class="{ 'block': open, 'hidden': !open }" class="hidden lg:hidden">
         <div class="pt-2 pb-3">
-            <a href="#" class="block py-2 pl-3 pr-4 text-base font-medium text-indigo-700 transition duration-150 ease-in-out border-l-4 border-indigo-500 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700">Wiki</a>
+            <a href="#" class="block py-2 pl-3 pr-4 text-base font-medium text-blue-700 transition duration-150 ease-in-out border-l-4 border-blue-500 bg-blue-50 focus:outline-none focus:text-blue-800 focus:bg-blue-100 focus:border-blue-700">Wiki</a>
             <a href="#" class="block py-2 pl-3 pr-4 mt-1 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-l-4 border-transparent hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300">Actualités</a>
             <a href="#" class="block py-2 pl-3 pr-4 mt-1 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-l-4 border-transparent hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300">Agenda</a>
         </div>
