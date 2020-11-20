@@ -17,12 +17,39 @@ class HomeTest extends TestCase
      */
     public function home()
     {
-        $response = $this->get('/');
-
         $clips = Post::factory()->count(6)->create();
+
+        $response = $this->get('/');
 
         $response
             ->assertStatus(200)
             ->assertSee('Dernières actualités');
+    }
+
+    /**
+     * @test
+     */
+    public function show_posts()
+    {
+        $clips = Post::factory()->count(6)->create();
+
+        $response = $this->get('posts');
+
+        $response
+            ->assertStatus(200)
+            ->assertSee('Toutes les actualités');
+    }
+
+    /**
+     * @test
+     */
+    public function show_post()
+    {
+        $clip = Post::factory()->create();
+
+        $response = $this->get('posts/' . $clip->slug);
+
+        $response
+            ->assertStatus(200);
     }
 }
