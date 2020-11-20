@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Carbon\Carbon;
 use Illuminate\View\Component;
 
 class Post extends Component
@@ -28,6 +29,13 @@ class Post extends Component
     public $date;
 
     /**
+     * The post slug.
+     *
+     * @var string
+     */
+    public $slug;
+
+    /**
      * The post cover.
      *
      * @var string
@@ -39,12 +47,18 @@ class Post extends Component
      *
      * @return void
      */
-    public function __construct(string $title, string $extract, string $date, string $cover)
+    public function __construct(string $title, string $extract, string $date, string $slug, string $cover)
     {
         $this->title = $title;
         $this->extract = $extract;
         $this->date = $date;
+        $this->slug = $slug;
         $this->cover = $cover;
+    }
+
+    public function date(): string
+    {
+        return Carbon::parse($this->date)->isoFormat('LL');
     }
 
     /**
