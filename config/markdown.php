@@ -41,7 +41,10 @@ return [
     |
     */
 
-    'extensions' => [],
+    'extensions' => [
+        \ElGigi\CommonMarkEmoji\EmojiExtension::class,
+        \App\Markdown\Extensions\Iframe\IframeExtension::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------

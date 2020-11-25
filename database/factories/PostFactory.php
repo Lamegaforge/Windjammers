@@ -66,13 +66,16 @@ class PostFactory extends Factory
     protected function getContent(): string
     {
             $parts = [
-                '# title',
-                '## subtitle',
-                "Annoncée ce lundi 15 juin à la surprise générale, une démo de Windjammers 2 a été rendue disponible pendant le Steam Festival, un évènement regroupant plus de 900 démos de jeux pour la plupart encore en développement. Le festival doit prendre fin le lundi 22 juin.",
-                "Dotemu a bien fait les choses pour que la communauté de joueurs puisse s'essayer au jeu et faire un maximum de retours en créant un Discord officiel.",
-                "Je vous invite donc à rejoindre ce Discord et à découvrir les discussions suscitées par la démo.",
-                "Pour faire court, le jeu est vraiment très bien, très fun mais la partie jeu en ligne n'est pas encore optimale - gardons à l'esprit que le jeu est toujours en cours de développement !",
-                "La [commauté américaine](#) a tout de même fait au mieux pour proposer un tournoi communautaire le samedi 20 juin, sur la chaîne Twitch de Panda Global et en s'appuyant sur les services de Parsec et Paperspace pour fournir une expérience en ligne alternative. Le tournoi a également servi à récolter des fonds pour l'association Black Girls Code. Une bien belle initiative donc !",
+                "# Windjammers 2 présenté à l'UFA 2019",
+                "Alors que l'UFA (Ultimate Fighting Arena) venait de dépasser le millier de compétiteurs inscrits sur les jeux de baston du moment, on apprenait qu'un tournoi sur **Windjammers 2** y serait organisé ! ",
+                "[Dotemu](#) était donc présent avec 4 postes PC faisant tourner une version encore largement en développement du jeu (sortie prévue courant 2020).",
+                "**Six personnages étaient jouables** : trois nouveaux (Sophie, Max et Jao) et trois issus du premier épisode (Wessel, Mita et Biaggi). Force et de constater que Max et Sophie ont séduit en grande partie grâce à leur gameplay. Sophie (de Lys) semble assez équilibrée et sa super custom est possiblement la plus surprenante  du jeu. Max lui et le plus lent mais cet handicap ne paraît pas l'affecter tant que ça. Outre la force de son lancer, c'est son aisance au 'slapshot' - un coup chargé qui envoie un supersonic shot - qui fait vraiment la différence.",
+                "[](https://twitter.com/Windjammers/status/1180459451817611264?width=600&height=700)",
+                "[](https://twitter.com/Windjammers/status/1180806605866225664?width=600&height=700)",
+                "Car au niveau des mécaniques, on retrouve tout ce que l'original propose plus des ajouts bienvenus qui dynamise le jeu. **Finie la campe en défense**, le bouton de lob permet désormais de frapper le frisbee pour qu'il retombe rapidement au sol derrière le filet (un 'dropshot'). Un rebond au sol est accordé au défenseur sans quoi ce nouveau coup serait trop efficace.",
+                "[](https://www.youtube.com/embed/YWsCtYUXM3U)",
+                "[L'arbre du tournoi](#) et le [top 8 en vidéo]().",
+                "Merci aux équipe de l'UFA et de Dotemu.",
             ];
 
         return implode(PHP_EOL . PHP_EOL, $parts);
