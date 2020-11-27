@@ -11,6 +11,31 @@ class Post extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title',
+        'highlight',
+        'thumbnail',
+        'slug',
+        'content',
+        'active',
+        'language',
+        'published_at',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'active' => 'boolean',
+    ];
+
     public function scopeLocalized($query)
     {
         return $query->where('language', App::getLocale());
