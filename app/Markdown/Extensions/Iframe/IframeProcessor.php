@@ -32,13 +32,13 @@ class IframeProcessor {
                         continue;
                     }
 
-                    $url = $parser->parse($link->getUrl());
-
-                    if ($url === null) {
+                    $embed = $parser->parse($link->getUrl());
+                    
+                    if ($embed === null) {
                         continue;
                     }
                     
-                    $link->replaceWith(new Iframe($url));
+                    $link->replaceWith(new Iframe($embed));
                 }
             }
         }
