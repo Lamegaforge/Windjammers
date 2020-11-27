@@ -78,7 +78,11 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($request->id);
 
-        //
+        $thumbnail = $request->file('thumbnail')->store($path = null, $disk = 'thumbnails');
+
+        $post->update([
+           'thumbnail' => $thumbnail,
+        ]);
 
         return Redirect::back();
     }
