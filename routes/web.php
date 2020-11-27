@@ -26,6 +26,13 @@ Route::group([
     Route::get('about', 'HomeController@about')->name('about');
 
     Route::prefix('posts')->as('posts.')->group(function () {
+        Route::middleware('auth')->group(function () {
+            Route::get('list', 'PostController@list')->name('list');
+            Route::get('{id}/edit', 'PostController@edit')->name('edit');
+            Route::get('{id}/preview', 'PostController@preview')->name('preview');
+            Route::post('{id}/update', 'PostController@update')->name('update');
+            Route::post('{id}/thumbnail', 'PostController@thumbnail')->name('thumbnail');
+        });
         Route::get('/', 'PostController@index')->name('index');
         Route::get('{hook}', 'PostController@show')->name('show');
     });
