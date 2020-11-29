@@ -1,6 +1,22 @@
 <?php
 
 return [
+    'home' => [
+        'en' => 'wiki.pages.introduction.en.home',
+        'fr' => 'wiki.pages.introduction.fr.home',
+    ],
+    'basic' => [
+        'en' => 'wiki.pages.introduction.en.basic',
+        'fr' => 'wiki.pages.introduction.fr.basic',
+    ],
+    'faq' => [
+        'en' => 'wiki.pages.introduction.en.faq',
+        'fr' => 'wiki.pages.introduction.fr.faq',
+    ],
+    'subtelties' => [
+        'en' => 'wiki.pages.introduction.en.subtelties',
+        'fr' => 'wiki.pages.introduction.fr.subtelties',
+    ],
     'beach' => [
         'en' => 'wiki.pages.stages.en.beach',
         'fr' => 'wiki.pages.stages.fr.beach',
