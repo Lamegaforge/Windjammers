@@ -1,0 +1,5 @@
+<p>The most iconic stage of Windjammers since it includes the palmtrees we can find on the title screen, and the same beach texture that is used for the Dog Distance mini game.</p>
+<p>But more importantly, it is - with Tiled - the smallest arena of the game. This results in long curves to hit the walls at some point and in limiting the distance you need to cover in defense. It's also less risky to go forward and try more offensive phases.</p>
+<p>The scoring area on Beach is considered the most "classic", with two yellow zones worth 3 points on each side and a red zone worth 5 points in the middle.</p>
+<p>In solo mode, you either start your first match on Beach or Tiled.</p>
+<p>In an arcade tournament setting - not when using the modern ports on PS4 and Nintendo Switch since they implemented a random stage select - we usually start the first match on Beach since it is considered the most neutral court (although this is not 100% true).</p>
