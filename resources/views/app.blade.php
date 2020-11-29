@@ -2,7 +2,7 @@
 $links = [
     [
         'Wiki',
-        '#',
+        'wiki',
         false,
     ],
     [
@@ -31,7 +31,10 @@ $links = [
 </head>
 
 <body class="antialiased">
-    @include('parts.navbar',['isHome' => request()->routeIs('home'), 'links' => $links])
+    @include('parts.navbar',[
+        'isHome' => request()->routeIs('home'), 
+        'links' => $links,
+    ])
     <main class="min-h-screen font-body">
         @yield('content')
     </main>
