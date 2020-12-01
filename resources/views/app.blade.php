@@ -2,7 +2,7 @@
 $links = [
     [
         'Wiki',
-        'wiki',
+        route('wiki.index'),
         false,
     ],
     [
