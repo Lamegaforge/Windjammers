@@ -27,7 +27,7 @@ class PostFactory extends Factory
             'title' => $this->faker->words($nb = 4, $asText = true),
             'slug' => $this->faker->unique()->slug(),
             'highlight' => $this->faker->paragraph,
-            'thumbnail' => $this->faker->imageUrl($width = 640, $height = 480, 'cats'),
+            'thumbnail' => null,
             'content' => $content,
             'active' => false,
             'language' => 'fr',
