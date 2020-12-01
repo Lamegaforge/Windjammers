@@ -31,6 +31,85 @@ class PostTest extends TestCase
     /**
      * @test
      */
+    public function guest_cannot_preview_post()
+    {
+        $post = Post::factory()->create();
+
+        $response = $this->get('posts/' . $post->id . '/preview');
+
+        $response
+            ->assertStatus(302)
+            ->assertRedirect('auth/login');
+    }
+
+    /**
+     * @test
+     */
+    public function guest_cannot_list_posts()
+    {
+        $response = $this->get('posts/list');
+
+        $response
+            ->assertStatus(302)
+            ->assertRedirect('auth/login');
+    }
+
+
+    /**
+     * @test
+     */
+    public function guest_cannot_edit_post()
+    {
+        $post = Post::factory()->create();
+
+        $response = $this->get('posts/' . $post->id . '/edit');
+
+        $response
+            ->assertStatus(302)
+            ->assertRedirect('auth/login');
+    }
+
+    /**
+     * @test
+     */
+    public function auth_can_preview_post()
+    {
+        $user = User::factory()->create();
+        $post = Post::factory()->create();
+
+        $response = $this->actingAs($user)->get('posts/' . $post->id . '/preview');
+
+        $response->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
+    public function auth_can_edit_post()
+    {
+        $user = User::factory()->create();
+        $post = Post::factory()->create();
+
+        $response = $this->actingAs($user)->get('posts/' . $post->id . '/edit');
+
+        $response->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
+    public function auth_can_list_posts()
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get('posts/list');
+
+        $response->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
     public function auth_can_update_post()
     {
         $user = User::factory()->create();
