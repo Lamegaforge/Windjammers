@@ -1,3 +1,5 @@
+@extends('app')
+@section('content')
 <p>Introduction</p>
 <a href="{{LaravelLocalization::localizeUrl('wiki/home')}}">home</a>
 <a href="{{LaravelLocalization::localizeUrl('wiki/basic')}}">basic</a>
@@ -33,3 +35,4 @@ $routes = [
 @foreach($routes as $route)
 <a href="{{LaravelLocalization::localizeUrl('wiki/' . $route)}}">{{$route}}</a>
 @endforeach
+@endsection
