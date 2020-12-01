@@ -3,7 +3,7 @@
         <div class="flex justify-center space-x-10 md:order-1">
             <div class="py-2">
                 <a href="{{route('about')}}" class="text-base text-gray-500 hover:text-gray-900">
-                    A propos
+                    À propos
                 </a>
             </div>
 

@@ -12,8 +12,16 @@
 
 @import "tailwindcss/utilities";
 
-.prose iframe {
-    width: 100%;
+@media (max-width: 640px) {
+    .prose iframe {
+        width: 100%;
+    }
+}
+
+@media (min-width: 640px) {
+    .prose iframe {
+        margin: 0 auto;
+    }
 }
 
 .gradient-text {

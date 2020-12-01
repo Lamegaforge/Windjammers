@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Services\WikiService;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
