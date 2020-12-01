@@ -39,5 +39,6 @@ $links = [
         @yield('content')
     </main>
     @include('parts.footer')
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>

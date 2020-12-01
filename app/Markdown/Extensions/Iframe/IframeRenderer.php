@@ -9,14 +9,8 @@ use League\CommonMark\Inline\Renderer\InlineRendererInterface;
 
 class IframeRenderer implements InlineRendererInterface 
 {
-    public function render(AbstractInline $inline, ElementRendererInterface $htmlRenderer): HtmlElement
+    public function render(AbstractInline $inline, ElementRendererInterface $htmlRenderer)
     {
-        return new HtmlElement('iframe', [
-            'width' => $inline->embed->width(),
-            'height' => $inline->embed->height(),
-            'src' => $inline->embed->url(),
-            'frameborder' => 0,
-            'allowfullscreen' => true,
-        ]);
+        return $inline->embed->render();
     }
 }
