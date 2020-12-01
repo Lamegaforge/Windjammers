@@ -2,8 +2,9 @@
 
 namespace App\Markdown\Extensions\Iframe\Parsers;
 
-use App\Markdown\Extensions\Iframe\Embed;
+use App\Markdown\Extensions\Iframe\Embeds;
 use App\Markdown\Extensions\Iframe\UrlInterface;
+use App\Markdown\Extensions\Iframe\Contracts\Embed;
 use App\Markdown\Extensions\Iframe\Contracts\Parser;
 use App\Markdown\Extensions\Iframe\UrlParserInterface;
 
@@ -26,7 +27,8 @@ class Youtube implements Parser
             'width' => $arguments['width'] ?? 560,
             'height' => $arguments['height'] ?? 315,
         ];
-        return new Embed($attributes);
+
+        return new Embeds\Youtube($attributes);
     }
 
     protected function doNotMatch($url): bool
