@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Services\WikiService;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,6 +27,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Blade::directive('datetime', function ($carbon) {
+            return "<?php echo ($carbon)->isoFormat('LL'); ?>";
+        });
     }
 }

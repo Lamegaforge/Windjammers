@@ -45,7 +45,7 @@ class HomeTest extends TestCase
      */
     public function show_post()
     {
-        $clip = Post::factory()->create();
+        $clip = Post::factory()->published()->create();
 
         $response = $this->get('posts/' . $clip->slug);
 
