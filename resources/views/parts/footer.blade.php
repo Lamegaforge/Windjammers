@@ -1,15 +1,15 @@
-<footer class="py-12 bg-white">
+<footer class="py-12 bg-white border-t border-gray-100">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
         <div class="flex justify-center space-x-10 md:order-1">
             <div class="py-2">
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900">
-                    About
+                <a href="{{route('about')}}" class="text-base text-gray-500 hover:text-gray-900">
+                    A propos
                 </a>
             </div>
 
             <div class="py-2">
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900">
-                    Blog
+                <a href="{{route('posts.index')}}" class="text-base text-gray-500 hover:text-gray-900">
+                    Actualités
                 </a>
             </div>
 

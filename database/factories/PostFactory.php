@@ -66,7 +66,6 @@ class PostFactory extends Factory
     protected function getContent(): string
     {
             $parts = [
-                "# Windjammers 2 présenté à l'UFA 2019",
                 "Alors que l'UFA (Ultimate Fighting Arena) venait de dépasser le millier de compétiteurs inscrits sur les jeux de baston du moment, on apprenait qu'un tournoi sur **Windjammers 2** y serait organisé ! ",
                 "[Dotemu](#) était donc présent avec 4 postes PC faisant tourner une version encore largement en développement du jeu (sortie prévue courant 2020).",
                 "**Six personnages étaient jouables** : trois nouveaux (Sophie, Max et Jao) et trois issus du premier épisode (Wessel, Mita et Biaggi). Force et de constater que Max et Sophie ont séduit en grande partie grâce à leur gameplay. Sophie (de Lys) semble assez équilibrée et sa super custom est possiblement la plus surprenante  du jeu. Max lui et le plus lent mais cet handicap ne paraît pas l'affecter tant que ça. Outre la force de son lancer, c'est son aisance au 'slapshot' - un coup chargé qui envoie un supersonic shot - qui fait vraiment la différence.",
