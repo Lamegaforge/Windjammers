@@ -25,7 +25,7 @@ class UpdateThumbnailRequest extends FormRequest
     public function rules()
     {
         return [
-            'thumbnail' => 'image|mimes:jpeg|max:1000|dimensions:max_width=600,max_height=400',
+            'thumbnails' => 'image|mimes:jpeg|max:1000|dimensions:max_width=600,max_height=400',
         ];
     }
 }
