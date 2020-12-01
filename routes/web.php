@@ -25,6 +25,11 @@ Route::group([
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('about', 'HomeController@about')->name('about');
 
+    Route::prefix('wiki')->as('wiki.')->group(function () {
+        Route::get('/', 'WikiController@index')->name('index');
+        Route::get('{slug}', 'WikiController@show')->name('show');
+    });
+
     Route::prefix('posts')->as('posts.')->group(function () {
         Route::middleware('auth')->group(function () {
             Route::get('list', 'PostController@list')->name('list');

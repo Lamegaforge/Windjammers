@@ -1,0 +1,5 @@
+<p>Un terrain hautement symbolique puisque ses palmiers se retrouvent sur l'écran titre et son sable chaud lors du "jeu du chien".</p>
+<p>C'est surtout, avec Tiled, le terrain le plus petit du jeu en hauteur, ce qui force les courbes les plus amples à taper le mur. La distance à couvrir étant réduite, il est plus facile et moins risquer de s'avancer vers le filet et tenter des phases offensives.</p>
+<p>La disposition des points est classique, avec la zone rouge à 5 points au centre de l'enbut.</p>
+<p>En mode solo, il est l'un des 2 terrains sur lesquels le premier match peut avoir lieu (toujours avec Tiled).</p>
+<p>En compétition - sauf sur les portages PS4 et Nintendo Switch qui permettent la sélection aléatoire du terrain - c'est sur Beach qu'on préfère commencer les matchs car il est considéré comme le plus neutre (attention, il ne l'est pas à 100 %).</p>
