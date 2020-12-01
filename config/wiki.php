@@ -49,9 +49,9 @@ return [
         'en' => 'wiki.pages.characters.en.costa',
         'fr' => 'wiki.pages.characters.fr.costa',
     ],
-    'miler' => [
-        'en' => 'wiki.pages.characters.en.miler',
-        'fr' => 'wiki.pages.characters.fr.miler',
+    'miller' => [
+        'en' => 'wiki.pages.characters.en.miller',
+        'fr' => 'wiki.pages.characters.fr.miller',
     ],
     'mita' => [
         'en' => 'wiki.pages.characters.en.mita',
