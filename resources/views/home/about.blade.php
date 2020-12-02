@@ -15,6 +15,9 @@
                 <p>Créée en 2012 autour de Dan et Wolmar, de plus en plus de joueurs ont rejoint la communauté pour découvrir ou redécouvrir ce jeu qui allie fun immédiat et profondeur compétitive.</p>
                 <p><b>Des tournois en ligne sur GGPO puis FightCade</b>, nous nous sommes retrouvés à plusieurs reprises lors de divers évènements et notamment le <b>Stunfest et le HFS Summer</b> durant lesquels nous avons pu organiser de magnifiques tournois dont le DiscMania, notre compétition annuelle de référence.</p>
                 <p>Vous trouverez tous les liens pour nous suivre, nous rejoindre, en apprendre davantage sur le jeu en bas de page.</p>
+                <p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/8IuCM-L5Um4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </p>
             </div>
         </article>
     </div>
