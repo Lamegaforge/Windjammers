@@ -2,7 +2,10 @@ const { colors } = require('tailwindcss/defaultTheme');
 module.exports = {
     purge: {
         layers: ['utilities'],
-        content: ['./resources/views/**/*.blade.php']
+        content: ['./resources/views/**/*.blade.php'],
+        options: {
+            safelist: ['bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800', 'bg-gray-100', 'text-gray-800'],
+        }
     },
     theme: {
         fontFamily: {
@@ -21,7 +24,9 @@ module.exports = {
                 '2.5': '0.625rem'
             },
             minHeight: {
-                '450px': '450px'
+                '450px': '450px',
+                '600px': '600px',
+                '800px': '800px'
             },
             maxWidth: {
                 '7xl': '80rem'
