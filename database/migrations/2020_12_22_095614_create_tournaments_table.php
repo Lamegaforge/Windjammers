@@ -17,9 +17,10 @@ class CreateTournamentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('cup_id');
             $table->string('name');
+            $table->string('slug');
             $table->bigInteger('registered')->default(0);
             $table->timestamp('start_time')->nullable();
-            $table->string('challonge_url');
+            $table->string('challonge_url')->nullable();
             $table->enum('state', ['open ', 'closed', 'finished'])->default('open');
             $table->timestamps();
 
