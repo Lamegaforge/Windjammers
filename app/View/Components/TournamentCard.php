@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Carbon\Carbon;
 use Illuminate\View\Component;
 
 class TournamentCard extends Component
@@ -75,6 +76,17 @@ class TournamentCard extends Component
                 return 'Terminé';
                 break;
         }
+    }
+
+    public function startedAt(): string
+    {
+        $startedAt = $this->tournament['started_at'];
+
+        if (is_null($startedAt)) {
+            return 'à déterminer';
+        }
+
+        return Carbon::parse($startedAt)->format('Y-m-d');
     }
 
     /**
