@@ -13,7 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('wintercup2021', 'WinterCupController@index')->name('home');
+Route::get('/', 'WinterCupController@index')->name('home');
+
+Route::get('{any}', function() {
+   return redirect('/');
+})->where('any', '.*');
 
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
@@ -24,7 +28,7 @@ Route::group([
     ],
 ], function() { 
 
-    Route::get('/', 'HomeController@index')->name('home');
+    // Route::get('/', 'HomeController@index')->name('home');
     Route::get('about', 'HomeController@about')->name('about');
 
     Route::prefix('wiki')->as('wiki.')->group(function () {

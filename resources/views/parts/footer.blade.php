@@ -1,6 +1,6 @@
 <footer class="py-12 bg-white border-t border-gray-100">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
-        <div class="flex justify-center space-x-10 md:order-1">
+<!--         <div class="flex justify-center space-x-10 md:order-1">
             <div class="py-2">
                 <a href="{{route('about')}}" class="text-base text-gray-500 hover:text-gray-900">
                     À propos
@@ -13,8 +13,9 @@
                 </a>
             </div>
 
-        </div>
+        </div> -->
         <div class="flex justify-center mt-6 space-x-6 md:mt-0 md:order-2">
+
             <a href="#" class="text-gray-400 hover:text-gray-500">
                 <span class="sr-only">Facebook</span>
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
