@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Cup;
+use App\Models\Player;
 use App\Models\Tournament;
 use Illuminate\Database\Seeder;
 
@@ -35,6 +36,11 @@ class WinterCup2021Seeder extends Seeder
         Tournament::factory()->create([
             'name' => 'Tournament #3',
             'slug' => 'tournament_3',
+            'cup_id' => $cup->id,
+        ]);
+
+        Player::factory()->create([
+            'name' => 'Adwim',
             'cup_id' => $cup->id,
         ]);
     }
