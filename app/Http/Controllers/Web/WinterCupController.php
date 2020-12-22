@@ -13,10 +13,24 @@ class WinterCupController extends Controller
         $tournaments = [
             [
                 'name' => 'Tournois #1',
-                'registered' => 10,
+                'registered' => 0,
                 'start_time' => '2020-01-01',
                 'challonge_url' => 'https://challonge.com/elr5nzzu',
                 'state' => 'open', // closed, finished
+            ],
+            [
+                'name' => 'Tournois #2',
+                'registered' => 542,
+                'start_time' => '2020-01-01',
+                'challonge_url' => 'https://challonge.com/elr5nzzu',
+                'state' => 'closed', // closed, finished
+            ],
+            [
+                'name' => 'Tournois #3',
+                'registered' => 934,
+                'start_time' => '2020-01-01',
+                'challonge_url' => 'https://challonge.com/elr5nzzu',
+                'state' => 'finished', // closed, finished
             ],
         ];
 
