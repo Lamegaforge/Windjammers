@@ -22,30 +22,28 @@ class WinterCup2021Seeder extends Seeder
         ]);
 
         Tournament::factory()->create([
-            'name' => 'Tournament #1',
-            'slug' => 'tournament_1',
-            'challonge_url' => 'https://challonge.com/elr5nzzu',
-            'cup_id' => $cup->id,
-            'state' => 'finished',
-            'start_time' => '2021-01-01',
-        ]);
-
-        Tournament::factory()->create([
-            'name' => 'Tournament #2',
-            'slug' => 'tournament_2',
-            'challonge_url' => 'https://challonge.com/elr5nzzu',
-            'cup_id' => $cup->id,
-            'state' => 'closed',
-            'start_time' => '2021-02-01',
-        ]);
-
-        Tournament::factory()->create([
-            'name' => 'Tournament #3',
-            'slug' => 'tournament_3',
+            'name' => 'Tournoi de Janvier',
+            'slug' => 'tournament_january',
             'challonge_url' => 'https://challonge.com/elr5nzzu',
             'cup_id' => $cup->id,
             'state' => 'open',
-            'start_time' => '2021-03-01',
+            'started_at' => '2021-01-10',
+        ]);
+
+        Tournament::factory()->create([
+            'name' => 'Tournoi de Fevrier',
+            'slug' => 'tournament_february',
+            'challonge_url' => 'https://challonge.com/elr5nzzu',
+            'cup_id' => $cup->id,
+            'state' => 'open',
+        ]);
+
+        Tournament::factory()->create([
+            'name' => 'Tournoi de Mars',
+            'slug' => 'tournament_march',
+            'challonge_url' => 'https://challonge.com/elr5nzzu',
+            'cup_id' => $cup->id,
+            'state' => 'open',
         ]);
 
         Player::factory()->create([
