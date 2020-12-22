@@ -12,6 +12,10 @@ class Participation extends Model
     protected $fillable = [
     	'tournament_id',
     	'rank',
+    	'win',
+    	'lose',
+    	'draw',
+    	'points',
     ];
 
     public function player()

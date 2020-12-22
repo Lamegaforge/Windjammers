@@ -8,9 +8,9 @@
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                 Rank
                             </th>
-                            <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+<!--                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                 Change
-                            </th>
+                            </th> -->
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                 Name
                             </th>
@@ -35,9 +35,9 @@
                             <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
                                 {{$user['rank']}}
                             </td>
-                            <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+   <!--                          <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                                 {{$user['change']}}
-                            </td>
+                            </td> -->
                             <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                                 {{$user['name']}}
                             </td>
