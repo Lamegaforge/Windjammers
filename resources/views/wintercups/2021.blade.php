@@ -1,6 +1,6 @@
 @extends('app')
 @section('content')
-<section class="relative flex items-center min-h-450px lg:min-h-600px">
+<section class="relative flex items-center min-h-450px lg:min-h-600px xl:min-h-800px">
     <div class="relative z-10 max-w-screen-md px-4 mx-auto sm:px-6">
         <h1 class="text-lg text-white md:text-2xl lg:text-3xl font-display text-shadow">Winter Cul 2021</h1>
     </div>
