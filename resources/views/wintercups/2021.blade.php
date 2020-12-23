@@ -14,11 +14,11 @@
     </svg>
     <div class="grid max-w-3xl grid-cols-1 gap-8 mx-auto lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
         <div class="px-1 space-y-6 overflow-hidden lg:col-start-1 lg:col-span-2">
-            <h2 class="text-lg font-medium text-gray-900">Résultats</h2>
+            <h2 class="text-lg font-medium text-gray-900">Leaderboard</h2>
             @include('wintercups.leaderboard')
         </div>
         <div class="space-y-6 lg:col-start-3 lg:col-span-1">
-            <h2 class="text-lg font-medium text-gray-900">Les autres tournois</h2>
+            <h2 class="text-lg font-medium text-gray-900">Les tournois à venir</h2>
             <div class="space-y-3">
                 @foreach ($tournaments as $cup)
                 <x-tournament-card :tournament="$cup" />
