@@ -40,7 +40,7 @@
     <div class="px-4 mx-auto mt-6 max-w-7xl sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
         <div class="md:order-1">
             <p class="text-base text-center text-gray-400">
-                &copy; 2020 Windjammers France.
+                &copy; 2020 Windjammers France. Made with 💕 by <a href="https://ubermeows.com/" class="font-bold">übermeows.</a>
             </p>
         </div>
     </div>
