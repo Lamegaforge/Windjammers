@@ -8,9 +8,6 @@
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                 Rank
                             </th>
-<!--                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                                Change
-                            </th> -->
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                 Name
                             </th>
@@ -30,30 +27,8 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        @foreach($lideurborde as $user)
-                        <tr>
-                            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
-                                {{$user['rank']}}
-                            </td>
-   <!--                          <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                {{$user['change']}}
-                            </td> -->
-                            <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                {{$user['name']}}
-                            </td>
-                            <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                {{$user['resume']['win']}}/{{$user['resume']['lose']}}/{{$user['resume']['draw']}}
-                            </td>
-                            <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                {{$user['matchs']}}
-                            </td>
-                            <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                {{$user['ratio']}}
-                            </td>
-                            <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                {{$user['points']}}
-                            </td>
-                        </tr>
+                        @foreach($lideurborde as $rank => $player)
+                            <x-leaderboard-line :player="$player" :rank="$rank"/>
                         @endforeach
                     </tbody>
                 </table>
