@@ -20,6 +20,10 @@ class Tournament extends Model
         'started_at',
     ];
 
+    protected $fillable = [
+        'state',
+    ];
+
     public function players()
     {
         return $this->belongsToMany(Player::class);
