@@ -14,6 +14,15 @@
     </svg>
     <div class="grid max-w-3xl grid-cols-1 gap-8 mx-auto lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
         <div class="px-1 space-y-6 overflow-hidden lg:col-start-1 lg:col-span-2">
+            <div class="pb-4 prose max-w-none">
+                <p>C'est l'heure de votre grande compétition hivernale, la <strong>Windjammers Winter Cup 2021</strong> !</p>
+                <p>Venez affronter les meilleurs joueurs du monde durant 3 grands tournois pour déterminer qui sera le meilleur discobole numérique de 2021 !
+                    La compétition se déroulera de <strong>janvier à mars 2021</strong>, chaque mois proposera un tournoi à suivre en <strong>format Suisse / FT2.</strong></p>
+                <p>Les résultats seront ensuite agrégés dans le leaderboard ci-dessous pour déterminer le grand champion de la Winter Cup 2021.
+                    Pour participer, c'est simple, il te suffit de rejoindre les Challonges en cliquant sur les liens ci-contre et de t'inscrire aux tournois.
+                </p>
+                <p>Mesdames, messieurs, à vos frisbees !</p>
+            </div>
             <h2 class="text-lg font-medium text-gray-900">Leaderboard</h2>
             @include('wintercups.leaderboard')
         </div>
