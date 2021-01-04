@@ -13,13 +13,14 @@
                             </th>
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                 <span>Resume</span>
-                                <span class="block text-gray-400 normal-case">win/lose/draw</span>
+                                <span class="block text-gray-400 normal-case">win/draw/lose</span>
                             </th>
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                 Matchs
                             </th>
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                                Ratio
+                                <span>Ratio</span>
+                                <span class="block text-gray-400 normal-case">(win/lose)</span>
                             </th>
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                 Points

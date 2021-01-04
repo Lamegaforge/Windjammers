@@ -31,12 +31,15 @@ class LeaderboardService
             ->toArray();
     }
 
-    protected function retrieveTournaments(Cup $cup)
+    protected function retrieveTournaments(Cup $cup): Collection
     {
-        return $cup->tournaments()->where('state', 'finished')->get();
+        return $cup
+            ->tournaments()
+            ->where('state', 'finished')
+            ->get();
     }
 
-    protected function retrieveParticipations($tournaments, $player)
+    protected function retrieveParticipations($tournaments, $player): Collection
     {
         return $tournaments->map(function ($tournament) use($player) {
 

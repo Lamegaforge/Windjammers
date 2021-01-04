@@ -17,10 +17,10 @@ class LeaderboardLine extends Component
 
     public function matchs(): int
     {
-        return $this->player['win'] + $this->player['lose'] + $this->player['draw'];
+        return $this->player['win'] + $this->player['draw'] + $this->player['lose'];
     }
 
-    public function ratio(): int
+    public function ratio(): float
     {
         $win = $this->player['win'] ?: 1;
         $lose = $this->player['lose'] ?: 1;

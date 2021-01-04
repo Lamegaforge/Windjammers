@@ -46,7 +46,7 @@ class AddParticipation extends Command
 
             $cup = $this->findCup();
             $tournament = $this->findTournament($cup);
-            $player = $this->findPlayer();
+            $player = $this->findPlayer($cup);
 
             $attributes = [
                 'rank' => $this->ask('Rank ?'),
@@ -84,11 +84,24 @@ class AddParticipation extends Command
         return $cup->tournaments()->where('slug', $argument)->firstOrFail();
     }
 
-    protected function findPlayer(): Player
+    protected function findPlayer(Cup $cup): Player
     {
         $argument = $this->argument('player');
 
-        return Player::where('name', $argument)->firstOrFail();
+        $player = Player::where('name', $argument)
+            ->where('cup_id', $cup->id)
+            ->first();
+
+        if ($player) {
+            return $player;
+        }    
+
+        $this->info("Création d'un nouveau player");
+
+        return Player::factory()->create([
+            'name' => $argument,
+            'cup_id' => $cup->id,
+        ]);
     }
 
     protected function itsNotDuplicate(Player $player, array $attributes)
