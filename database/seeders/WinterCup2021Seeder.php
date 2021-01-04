@@ -27,7 +27,7 @@ class WinterCup2021Seeder extends Seeder
             'challonge_url' => 'https://windjammersfr.challonge.com/fr/winterleague1',
             'cup_id' => $cup->id,
             'state' => 'open',
-            'started_at' => '2021-01-10',
+            'started_at' => '2021-01-10 à 21:00 CET',
         ]);
 
         Tournament::factory()->create([
@@ -36,7 +36,7 @@ class WinterCup2021Seeder extends Seeder
             'challonge_url' => 'https://windjammersfr.challonge.com/fr/winterleague2',
             'cup_id' => $cup->id,
             'state' => 'open',
-            'started_at' => '2021-02-07',
+            'started_at' => '2021-02-07 à 21:00 CET',
         ]);
 
         Tournament::factory()->create([
@@ -45,7 +45,7 @@ class WinterCup2021Seeder extends Seeder
             'challonge_url' => 'https://windjammersfr.challonge.com/fr/winterleague3',
             'cup_id' => $cup->id,
             'state' => 'open',
-            'started_at' => '2021-02-07',
+            'started_at' => '2021-03-07 à 21:00 CET',
         ]);
 
         // Player::factory()->create([
