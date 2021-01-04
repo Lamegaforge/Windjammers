@@ -3,7 +3,7 @@
 @push('metas')
 <meta property='og:title' content="Windjammers Winter Cup 2021">
 <meta property='og:description' content="Venez affronter les meilleurs joueurs du monde durant 3 grands tournois pour déterminer qui sera le meilleur discobole numérique de 2021 !">
-<meta property="og:image" content="/images/cups/winter_cup_2021.jpg">
+<meta property="og:image" content="/images/cups/winter_cup_2021.png">
 @endpush
 
 @section('content')
