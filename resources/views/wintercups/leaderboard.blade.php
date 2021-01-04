@@ -27,9 +27,17 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        @foreach($lideurborde as $rank => $player)
-                            <x-leaderboard-line :player="$player" :rank="$rank"/>
-                        @endforeach
+                        @if(! $lideurborde)
+                        <tr>
+                            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                Aucun résultat pour le moment 🦕
+                            </td>
+                        <tr>
+                        @else
+                            @foreach($lideurborde as $rank => $player)
+                                <x-leaderboard-line :player="$player" :rank="$rank"/>
+                            @endforeach
+                        @endif
                     </tbody>
                 </table>
             </div>
