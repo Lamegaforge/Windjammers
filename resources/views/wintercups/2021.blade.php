@@ -24,7 +24,7 @@
             <div class="pb-4 prose max-w-none">
                 <p>C'est l'heure de votre grande compétition hivernale, la <strong>Windjammers Winter Cup 2021</strong> !</p>
                 <p>Venez affronter les meilleurs joueurs du monde durant 3 grands tournois pour déterminer qui sera le meilleur discobole numérique de 2021 !
-                    La compétition se déroulera de <strong>janvier à mars 2021</strong>, chaque mois proposera un tournoi à suivre en <strong>format Suisse / FT2.</strong></p>
+                    La compétition se déroulera de <strong>janvier à mars 2021</strong>, chaque mois proposera un tournoi à suivre en <strong>format Suisse, FT2 / BO3.</strong></p>
                 <p>Les résultats seront ensuite agrégés dans le leaderboard ci-dessous pour déterminer le grand champion de la Winter Cup 2021.
                     Pour participer, c'est simple, il te suffit de rejoindre les Challonges en cliquant sur les liens ci-contre et de t'inscrire aux tournois.
                 </p>
