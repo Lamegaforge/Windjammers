@@ -11,15 +11,6 @@ class Tournament extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = [
-        'started_at',
-    ];
-
     protected $fillable = [
         'state',
     ];
