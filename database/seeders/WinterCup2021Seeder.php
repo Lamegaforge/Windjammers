@@ -24,7 +24,7 @@ class WinterCup2021Seeder extends Seeder
         Tournament::factory()->create([
             'name' => 'Tournoi de Janvier',
             'slug' => 'tournament_january',
-            'challonge_url' => 'https://challonge.com/elr5nzzu',
+            'challonge_url' => 'https://windjammersfr.challonge.com/fr/winterleague1',
             'cup_id' => $cup->id,
             'state' => 'open',
             'started_at' => '2021-01-10',
@@ -33,32 +33,34 @@ class WinterCup2021Seeder extends Seeder
         Tournament::factory()->create([
             'name' => 'Tournoi de Fevrier',
             'slug' => 'tournament_february',
-            'challonge_url' => 'https://challonge.com/elr5nzzu',
+            'challonge_url' => 'https://windjammersfr.challonge.com/fr/winterleague2',
             'cup_id' => $cup->id,
             'state' => 'open',
+            'started_at' => '2021-02-07',
         ]);
 
         Tournament::factory()->create([
             'name' => 'Tournoi de Mars',
             'slug' => 'tournament_march',
-            'challonge_url' => 'https://challonge.com/elr5nzzu',
+            'challonge_url' => 'https://windjammersfr.challonge.com/fr/winterleague3',
             'cup_id' => $cup->id,
             'state' => 'open',
+            'started_at' => '2021-02-07',
         ]);
 
-        Player::factory()->create([
-            'name' => 'Adwim',
-            'cup_id' => $cup->id,
-        ]);
+        // Player::factory()->create([
+        //     'name' => 'Adwim',
+        //     'cup_id' => $cup->id,
+        // ]);
 
-        Player::factory()->create([
-            'name' => 'Pyrotek',
-            'cup_id' => $cup->id,
-        ]);
+        // Player::factory()->create([
+        //     'name' => 'Pyrotek',
+        //     'cup_id' => $cup->id,
+        // ]);
 
-        Player::factory()->create([
-            'name' => 'Otherend',
-            'cup_id' => $cup->id,
-        ]);
+        // Player::factory()->create([
+        //     'name' => 'Otherend',
+        //     'cup_id' => $cup->id,
+        // ]);
     }
 }
