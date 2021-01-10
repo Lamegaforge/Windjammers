@@ -7,11 +7,13 @@ use Illuminate\View\Component;
 class LeaderboardLine extends Component
 {
     public $player;
+    public $previous;
     public $rank;
 
-    public function __construct(array $player, int $rank)
+    public function __construct($player, $previous = null, int $rank)
     {
         $this->player = $player;
+        $this->previous = $previous;
         $this->rank = $rank;
     }
 
@@ -28,9 +30,17 @@ class LeaderboardLine extends Component
         return number_format($win / $lose, 2, '.', '');
     }
 
-    public function rank(): int
+    public function rank()
     {
-        return $this->rank + 1;
+        if (! $this->previous) {
+            return 1;
+        }
+
+        if ($this->previous['points'] != $this->player['points']) {
+            return $this->rank + 1;
+        }
+
+        return '-';
     }
 
     public function render()
