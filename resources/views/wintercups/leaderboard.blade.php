@@ -36,7 +36,10 @@
                         <tr>
                         @else
                             @foreach($lideurborde as $rank => $player)
-                                <x-leaderboard-line :player="$player" :rank="$rank"/>
+                                <x-leaderboard-line 
+                                    :player="$player" 
+                                    :previous="$lideurborde->get($rank - 1) ?? null" 
+                                    :rank="$rank"/>
                             @endforeach
                         @endif
                     </tbody>

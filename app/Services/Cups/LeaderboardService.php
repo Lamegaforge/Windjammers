@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 
 class LeaderboardService
 {
-    public function forge(Cup $cup): array
+    public function forge(Cup $cup): Collection
     {
         $tournaments = $this->retrieveTournaments($cup);
 
@@ -27,8 +27,7 @@ class LeaderboardService
 
         return $leaderboard
             ->sortbydesc('points')
-            ->values()
-            ->toArray();
+            ->values();
     }
 
     protected function retrieveTournaments(Cup $cup): Collection
