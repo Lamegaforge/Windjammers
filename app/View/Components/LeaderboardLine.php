@@ -25,7 +25,7 @@ class LeaderboardLine extends Component
         $win = $this->player['win'] ?: 0;
         $lose = $this->player['lose'] ?: 1;
 
-        return $win / $lose;
+        return number_format($win / $lose, 2, '.', '');
     }
 
     public function rank(): int
