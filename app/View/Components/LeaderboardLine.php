@@ -22,7 +22,7 @@ class LeaderboardLine extends Component
 
     public function ratio(): float
     {
-        $win = $this->player['win'] ?: 1;
+        $win = $this->player['win'] ?: 0;
         $lose = $this->player['lose'] ?: 1;
 
         return $win / $lose;
