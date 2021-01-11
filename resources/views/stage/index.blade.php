@@ -2,12 +2,18 @@
 
 @push('metas')
 <meta property='og:title' content="Stage picker">
+<link rel="prefetch" href="/images/stages/beach.gif" />
+<link rel="prefetch" href="/images/stages/clay.gif" />
+<link rel="prefetch" href="/images/stages/concrete.gif" />
+<link rel="prefetch" href="/images/stages/lawn.gif" />
+<link rel="prefetch" href="/images/stages/stadium.gif" />
+<link rel="prefetch" href="/images/stages/tiled.gif" />
 @endpush
 
 @section('content')
 <section class="relative flex items-center justify-center min-h-screen px-4 pt-16 pb-20 bg-gray-900 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
     <div x-data="picker()" class="text-center">
-        <template x-show="started">
+        <template x-if="started">
             <div>
                 <img class="mx-auto border-8 border-yellow-300" :src="`images/stages/${stage.src}`" />
                 <p x-show="stopped" x-text="stage.name" class="mt-4 text-white font-display"></p>
