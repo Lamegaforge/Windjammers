@@ -28,6 +28,14 @@ $links = [
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     @stack('metas')
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFWH150W1N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-EFWH150W1N');
+    </script>
 </head>
 
 <body class="antialiased">
