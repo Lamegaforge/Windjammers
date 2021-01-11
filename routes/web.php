@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'WinterCupController@index')->name('home');
+Route::get('stage-pick', 'StageController@index');
 
 Route::get('{any}', function() {
    return redirect('/');
