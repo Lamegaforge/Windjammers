@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('wintercup2021', 'WinterCupController@index')->name('home');
+Route::get('stage-pick', 'StageController@index')->name('home');
 
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
