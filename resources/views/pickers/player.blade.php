@@ -76,13 +76,13 @@
                     self.stopped = true;
                     confetti({
                         origin: {
-                            x: 0.75,
+                            x: 0.35,
                             y: 0.75
                         }
                     });
                     confetti({
                         origin: {
-                            x: 0.25,
+                            x: 0.65,
                             y: 0.75
                         }
                     });
