@@ -39,7 +39,8 @@
         {
             name: 'Concrete',
             src: 'concrete.gif'
-        }, {
+        }, 
+        {
             name: 'Lawn',
             src: 'lawn.gif',
         },
