@@ -4,16 +4,24 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Dropdown extends Component
+class Picker extends Component
 {
+    /**
+     * Picker items.
+     *
+     * @var array
+     */
+    public $items;
+    
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(array $items)
     {
-        //
+        $this->items = $items;
     }
 
     /**
@@ -23,6 +31,6 @@ class Dropdown extends Component
      */
     public function render()
     {
-        return view('components.dropdown');
+        return view('components.picker');
     }
 }

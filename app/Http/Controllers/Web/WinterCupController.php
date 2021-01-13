@@ -3,68 +3,28 @@
 namespace App\Http\Controllers\Web;
 
 use View;
+use App\Models\Cup;
+use App\Models\Player;
+use App\Models\Tournament;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Services\Cups\LeaderboardService;
 
 class WinterCupController extends Controller
 {
     public function index(Request $request)
     {
-        $tournaments = [
-            [
-                'name' => 'Tournois #1',
-                'registered' => 10,
-                'start_time' => '2020-01-01',
-                'challonge_url' => 'https://challonge.com/elr5nzzu',
-                'state' => 'open', // closed, finished
-            ],
-        ];
+        $cup = Cup::where('slug', 'wintercup2021')->firstOrFail();
 
-        $lideurborde = [
-            [
-                'rank' => 1,
-                'change' => 1,
-                'name' => 'Pyrotek',
-                'matchs' => 3,
-                'resume' => [
-                    'win' => 2,
-                    'lose' => 1,
-                    'draw' => 0,
-                ],
-                'ratio' => 2,
-                'points' => 6,
-            ],
-            [
-                'rank' => 2,
-                'change' => -1,
-                'name' => 'Otherend',
-                'matchs' => 3,
-                'resume' => [
-                    'win' => 2,
-                    'lose' => 1,
-                    'draw' => 0,
-                ],
-                'ratio' => 2,
-                'points' => 6,
-            ],
-            [
-                'rank' => 3,
-                'change' => 0,
-                'name' => 'Otherend',
-                'matchs' => 3,
-                'resume' => [
-                    'win' => 2,
-                    'lose' => 1,
-                    'draw' => 0,
-                ],
-                'ratio' => 2,
-                'points' => 6,
-            ],
-        ];
+        $tournaments = $cup->tournaments()
+            ->orderBy('created_at')
+            ->get();
+
+        $leaderboard = app(LeaderboardService::class)->forge($cup);
 
         return View::make('wintercups.2021', [
-            'tournaments' => $tournaments,
-            'lideurborde' => $lideurborde,
+            'tournaments' => $tournaments->toArray(),
+            'lideurborde' => $leaderboard,
         ]);
     }
 }
