@@ -45,6 +45,7 @@ Route::group([
         });
         Route::get('/', 'PostController@index')->name('index');
         Route::get('{hook}', 'PostController@show')->name('show');
+        Route::post('{hook}/markdown', 'PostController@markdown')->name('markdown');
     });
 
     Route::prefix('auth')->as('auth.')->group(function () {

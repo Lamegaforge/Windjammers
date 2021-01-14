@@ -37,6 +37,15 @@ class PostController extends Controller
         ]);
     }
 
+    public function markdown(Request $request)
+    {
+        $content = $request->content;
+
+        return View::make('posts.markdown', [
+            'content' => $content,
+        ]);
+    }
+
     public function preview(Request $request)
     {
         $post = Post::findOrFail($request->id);
