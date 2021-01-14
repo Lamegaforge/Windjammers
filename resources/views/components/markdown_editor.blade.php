@@ -1,5 +1,5 @@
 <div>
-    <textarea x-data="editor({{$content}}, 'http://windjammers.lab/fr/posts/1/markdown')" name="content" x-init="init()" x-ref="textarea"></textarea>
+    <textarea x-data="editor({{$content}}, `{{$previewUrl}}`)" name="content" x-init="init()" x-ref="textarea"></textarea>
 </div>
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script>

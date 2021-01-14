@@ -75,7 +75,7 @@
                             Content
                         </label>
                         <div class="mt-1">
-                            <x-markdown-editor preview-url="{{ route('posts.markdown', $post->id) }}" :content="json_encode($post->content)" />
+                            <x-markdown-editor preview-url="{{ route('posts.markdown') }}" :content="json_encode($post->content)" />
                         </div>
                     </div>
 
