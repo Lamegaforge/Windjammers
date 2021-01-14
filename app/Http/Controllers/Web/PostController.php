@@ -37,6 +37,15 @@ class PostController extends Controller
         ]);
     }
 
+    public function markdown(Request $request)
+    {
+        $content = $request->content;
+
+        return View::make('posts.markdown', [
+            'content' => $content,
+        ]);
+    }
+
     public function preview(Request $request)
     {
         $post = Post::findOrFail($request->id);
@@ -46,13 +55,13 @@ class PostController extends Controller
         ]);
     }
 
-    public function list(Request $request)
+    public function list()
     {
         $posts = Post::orderByDesc('published_at')
-            ->paginate(6);
+            ->paginate(8);
 
-        return View::make('posts.edit', [
-            'post' => $posts,
+        return View::make('posts.list', [
+            'posts' => $posts,
         ]);
     }
 
