@@ -5,6 +5,15 @@
     <div class="max-w-3xl mx-auto">
         <form class="space-y-8 divide-y divide-gray-200" action="{{ route('posts.update', $post->id) }}" method="POST">
             <div>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div>
                     <h3 class="text-lg font-medium leading-6 text-gray-900">
                         {{$post->title}}
@@ -88,7 +97,7 @@
                             <button x-data="{ active: '{{$post->active}}' }" @click="active = !active" :class="{ 'bg-indigo-600': active, 'bg-gray-200': !active }" type="button" class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                 <span class="sr-only">Enabled post</span>
                                 <span aria-hidden="true" :class="{ 'translate-x-5': active, 'translate-x-0': !active }" class="inline-block w-5 h-5 transition duration-200 ease-in-out transform bg-white rounded-full shadow ring-0"></span>
-                                <input type="hidden" name="active" :value="active ? true : false">
+                                <input type="hidden" name="active" :value="active ? 1 : 0">
                             </button>
                         </div>
                     </div>
