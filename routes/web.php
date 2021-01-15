@@ -40,6 +40,7 @@ Route::group([
             Route::get('list', 'PostController@list')->name('list');
             Route::get('{id}/edit', 'PostController@edit')->name('edit');
             Route::get('{id}/preview', 'PostController@preview')->name('preview');
+            Route::get('create', 'PostController@create')->name('create');
             Route::post('{id}/update', 'PostController@update')->name('update');
             Route::post('{id}/thumbnail', 'PostController@thumbnail')->name('thumbnail');
         });

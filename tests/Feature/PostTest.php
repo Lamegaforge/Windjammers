@@ -110,6 +110,20 @@ class PostTest extends TestCase
     /**
      * @test
      */
+    public function auth_can_create_post()
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get('posts/create');
+
+        $response
+            ->assertStatus(302)
+            ->assertRedirect('posts/1/edit');
+    }
+
+    /**
+     * @test
+     */
     public function auth_can_update_post()
     {
         $user = User::factory()->create();
