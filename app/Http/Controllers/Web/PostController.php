@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use Str;
 use View;
 use Redirect;
 use App\Models\Post;
@@ -72,6 +73,13 @@ class PostController extends Controller
         return View::make('posts.edit', [
             'post' => $post,
         ]);
+    }
+
+    public function create(Request $request)
+    {
+        $post = Post::create();
+
+        return Redirect::route('posts.edit', [$post]);
     }
 
     public function update(UpdatePostRequest $request)
