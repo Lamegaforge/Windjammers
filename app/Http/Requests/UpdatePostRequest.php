@@ -30,6 +30,7 @@ class UpdatePostRequest extends FormRequest
             'content' => 'required|string',
             'language' => 'required|in:fr,en',
             'active' => 'required|boolean',
+            'published_at' => 'date',
         ];
     }
 }

@@ -88,8 +88,16 @@
                             <button x-data="{ active: '{{$post->active}}' }" @click="active = !active" :class="{ 'bg-indigo-600': active, 'bg-gray-200': !active }" type="button" class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                 <span class="sr-only">Enabled post</span>
                                 <span aria-hidden="true" :class="{ 'translate-x-5': active, 'translate-x-0': !active }" class="inline-block w-5 h-5 transition duration-200 ease-in-out transform bg-white rounded-full shadow ring-0"></span>
-                                <input type="hidden" name="active" :value="active ? 1 : 0">
+                                <input type="hidden" name="active" :value="active ? true : false">
                             </button>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-3">
+                        <label for="content" class="block text-sm font-medium text-gray-700">
+                            Publish date
+                        </label>
+                        <div class="mt-1">
+                            <input type="date" name="published_at" value="{{($post->published_at)->isoFormat('YYYY-MM-DD')}}" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         </div>
                     </div>
                 </div>
