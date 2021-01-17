@@ -103,4 +103,15 @@ class PostController extends Controller
 
         return Redirect::back();
     }
+
+    public function delete(Request $request)
+    {
+        $post = Post::findOrFail($request->id);
+
+        $post->delete();
+
+        return Redirect::back()->with([
+            'message' => 'Post deleted.',
+        ]);
+    }
 }

@@ -178,4 +178,20 @@ class PostTest extends TestCase
 
         $this->assertEquals($post->thumbnail, $thumbnail->hashName());
     }
+
+
+    /**
+     * @test
+     */
+    public function auth_can_delete_post()
+    {
+        $user = User::factory()->create();
+        $post = Post::factory()->create();
+
+        $response = $this->actingAs($user)->get('posts/' . $post->id . '/delete');
+
+        $response
+            ->assertStatus(302)
+            ->assertSessionHas('message', 'Post deleted.');
+    }
 }

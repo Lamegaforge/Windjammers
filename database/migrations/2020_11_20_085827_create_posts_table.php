@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->boolean('active')->default(false);
             $table->text('language')->nullable();
             $table->timestamp('published_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }
