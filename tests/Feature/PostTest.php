@@ -141,7 +141,7 @@ class PostTest extends TestCase
 
         $response
             ->assertStatus(302)
-            ->assertRedirect('/');
+            ->assertRedirect('posts/1/edit');
 
         $post->refresh();
 
@@ -192,6 +192,6 @@ class PostTest extends TestCase
 
         $response
             ->assertStatus(302)
-            ->assertSessionHas('message', 'Post deleted.');
+            ->assertSessionHas('message', 'Post "' . $post->title . '" deleted.');
     }
 }

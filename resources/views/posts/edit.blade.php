@@ -5,14 +5,13 @@
     <div class="max-w-3xl mx-auto">
         <form class="space-y-8 divide-y divide-gray-200" action="{{ route('posts.update', $post->id) }}" method="POST">
             <div>
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
+                @if(session()->has('message'))
+                    {{session('message')}}
+                @endif
+                @if($errors->any())
+                    @foreach ($errors->all() as $error)
+                        {{$error}}
+                    @endforeach
                 @endif
                 <div>
                     <h3 class="text-lg font-medium leading-6 text-gray-900">

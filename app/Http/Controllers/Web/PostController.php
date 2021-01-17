@@ -61,8 +61,11 @@ class PostController extends Controller
         $posts = Post::orderByDesc('published_at')
             ->paginate(8);
 
+        $postCount = Post::count();
+
         return View::make('posts.list', [
             'posts' => $posts,
+            'post_count' => $postCount,
         ]);
     }
 
@@ -88,7 +91,9 @@ class PostController extends Controller
 
         $post->update($request->validated());
 
-        return Redirect::back();
+        return Redirect::route('posts.edit', $post)->with([
+            'message' => 'updated.',
+        ]);
     }
 
     public function thumbnail(UpdateThumbnailRequest $request)
@@ -110,8 +115,8 @@ class PostController extends Controller
 
         $post->delete();
 
-        return Redirect::back()->with([
-            'message' => 'Post deleted.',
+        return Redirect::route('posts.list')->with([
+            'message' => 'Post "' . $post->title . '" deleted.',
         ]);
     }
 }

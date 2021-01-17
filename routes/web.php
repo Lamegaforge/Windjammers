@@ -41,13 +41,13 @@ Route::group([
             Route::get('{id}/edit', 'PostController@edit')->name('edit');
             Route::get('{id}/preview', 'PostController@preview')->name('preview');
             Route::get('create', 'PostController@create')->name('create');
+            Route::get('{id}/delete', 'PostController@delete')->name('delete');
             Route::post('{id}/update', 'PostController@update')->name('update');
             Route::post('{id}/thumbnail', 'PostController@thumbnail')->name('thumbnail');
-            Route::get('{id}/delete', 'PostController@delete')->name('delete');
+            Route::post('/markdown', 'PostController@markdown')->name('markdown');
         });
         Route::get('/', 'PostController@index')->name('index');
         Route::get('{hook}', 'PostController@show')->name('show');
-        Route::post('/markdown', 'PostController@markdown')->name('markdown');
     });
 
     Route::prefix('auth')->as('auth.')->group(function () {
