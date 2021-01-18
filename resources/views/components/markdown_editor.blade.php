@@ -16,24 +16,36 @@
                         image: ["![](", ")"],
                         link: ["[", "]()"],
                     },
-                    previewRender: async function(plainText, preview) {
-                        preview.classList.add('prose');
-                        preview.classList.add('max-w-none');
-
+                    renderingConfig: {
+                        markedOptions: {
+                            sanitize: true
+                        }
+                    },
+                    previewRender: function(plainText, preview) {
                         let token = document.querySelector('meta[name="csrf-token"]')
-                        const response = await fetch(previewUrl, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'X-CSRF-TOKEN': token.content
-                            },
-                            body: JSON.stringify({
-                                content: plainText
+                        fetch(previewUrl, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRF-TOKEN': token.content
+                                },
+                                body: JSON.stringify({
+                                    content: plainText
+                                })
                             })
-                        });
-                        const text = await response.text();
+                            .then(response => response.text())
+                            .then(data => {
+                                preview.innerHTML = null;
+                                const iframe = document.createElement("iframe")
+                                iframe.style.width = "100%";
+                                iframe.style.height = "100%";
+                                preview.appendChild(iframe);
+                                iframe.contentWindow.document.open();
+                                iframe.contentWindow.document.write(data);
+                                iframe.contentWindow.document.close();
+                            });
 
-                        preview.innerHTML = text;
+                        return 'loading...';
                     },
                     toolbar: [{
                             name: "bold",
