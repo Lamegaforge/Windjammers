@@ -56,10 +56,16 @@ class PostController extends Controller
         ]);
     }
 
-    public function list()
+    public function list(Request $request)
     {
-        $posts = Post::orderByDesc('published_at')
-            ->paginate(8);
+        $query = Post::orderByDesc('published_at');
+
+        if ($request->has('search')) {
+            $query->where('title', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('highlight', 'LIKE', '%' . $request->search . '%');
+        }
+
+        $posts = $query->paginate(8);
 
         $postCount = Post::count();
 
