@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use Str;
 use View;
 use Redirect;
 use App\Models\Post;
@@ -37,6 +38,15 @@ class PostController extends Controller
         ]);
     }
 
+    public function markdown(Request $request)
+    {
+        $content = $request->content;
+
+        return View::make('posts.markdown', [
+            'content' => $content,
+        ]);
+    }
+
     public function preview(Request $request)
     {
         $post = Post::findOrFail($request->id);
@@ -48,11 +58,20 @@ class PostController extends Controller
 
     public function list(Request $request)
     {
-        $posts = Post::orderByDesc('published_at')
-            ->paginate(6);
+        $query = Post::orderByDesc('published_at');
 
-        return View::make('posts.edit', [
-            'post' => $posts,
+        if ($request->has('search')) {
+            $query->where('title', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('highlight', 'LIKE', '%' . $request->search . '%');
+        }
+
+        $posts = $query->paginate(8);
+
+        $postCount = Post::count();
+
+        return View::make('posts.list', [
+            'posts' => $posts,
+            'post_count' => $postCount,
         ]);
     }
 
@@ -65,13 +84,22 @@ class PostController extends Controller
         ]);
     }
 
+    public function create(Request $request)
+    {
+        $post = Post::create();
+
+        return Redirect::route('posts.edit', [$post]);
+    }
+
     public function update(UpdatePostRequest $request)
     {
         $post = Post::findOrFail($request->id);
 
         $post->update($request->validated());
 
-        return Redirect::back();
+        return Redirect::route('posts.edit', $post)->with([
+            'message' => 'updated.',
+        ]);
     }
 
     public function thumbnail(UpdateThumbnailRequest $request)
@@ -85,5 +113,16 @@ class PostController extends Controller
         ]);
 
         return Redirect::back();
+    }
+
+    public function delete(Request $request)
+    {
+        $post = Post::findOrFail($request->id);
+
+        $post->delete();
+
+        return Redirect::route('posts.list')->with([
+            'message' => 'Post "' . $post->title . '" deleted.',
+        ]);
     }
 }
