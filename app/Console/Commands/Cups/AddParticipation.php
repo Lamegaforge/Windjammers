@@ -106,7 +106,7 @@ class AddParticipation extends Command
 
     protected function itsNotDuplicate(Player $player, array $attributes)
     {
-        $duplicate = $player->participations()->where('id', $attributes['tournament_id'])->count();
+        $duplicate = $player->participations()->where('tournament_id', $attributes['tournament_id'])->count();
 
         if ($duplicate) {
             throw new Exception('duplicate participation');

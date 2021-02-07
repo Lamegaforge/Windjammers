@@ -22,9 +22,9 @@
                             </div>
                             <!-- Action buttons -->
                             <div class="flex flex-col sm:flex-row xl:flex-col">
-                                <button type="button" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 xl:w-full">
+                                <a href="{{route('posts.create')}}" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 xl:w-full">
                                     New Post
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <!-- Meta info -->
@@ -34,7 +34,7 @@
                                 <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
                                 </svg>
-                                <span class="text-sm font-medium text-gray-500">8 Posts</span>
+                                <span class="text-sm font-medium text-gray-500">{{$post_count}} Posts</span>
                             </div>
                         </div>
                     </div>

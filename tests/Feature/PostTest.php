@@ -110,6 +110,20 @@ class PostTest extends TestCase
     /**
      * @test
      */
+    public function auth_can_create_post()
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get('posts/create');
+
+        $response
+            ->assertStatus(302)
+            ->assertRedirect('posts/1/edit');
+    }
+
+    /**
+     * @test
+     */
     public function auth_can_update_post()
     {
         $user = User::factory()->create();
@@ -127,7 +141,7 @@ class PostTest extends TestCase
 
         $response
             ->assertStatus(302)
-            ->assertRedirect('/');
+            ->assertRedirect('posts/1/edit');
 
         $post->refresh();
 
@@ -163,5 +177,21 @@ class PostTest extends TestCase
         Storage::disk('thumbnails')->assertExists($thumbnail->hashName());
 
         $this->assertEquals($post->thumbnail, $thumbnail->hashName());
+    }
+
+
+    /**
+     * @test
+     */
+    public function auth_can_delete_post()
+    {
+        $user = User::factory()->create();
+        $post = Post::factory()->create();
+
+        $response = $this->actingAs($user)->get('posts/' . $post->id . '/delete');
+
+        $response
+            ->assertStatus(302)
+            ->assertSessionHas('message', 'Post "' . $post->title . '" deleted.');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Str;
 use Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -26,10 +27,19 @@ class UpdatePostRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
+            'slug' => 'required|string',
             'highlight' => 'required|string',
             'content' => 'required|string',
             'language' => 'required|in:fr,en',
             'active' => 'required|boolean',
+            'published_at' => 'date',
         ];
+    }
+
+    protected function prepareForValidation(): void
+    {
+        $this->merge([
+            'slug' => Str::slug($this->title),
+        ]);
     }
 }
