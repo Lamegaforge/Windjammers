@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <!-- Projects List -->
+        <!-- Posts List -->
         <div class="bg-white lg:min-w-0 lg:flex-1 xl:border-r xl:border-gray-200">
             <div class="pt-4 pb-4 pl-4 pr-6 border-t border-b border-gray-200 sm:pl-6 lg:pl-8 xl:pl-6 xl:pt-6 xl:border-t-0">
                 <div class="flex items-center">
@@ -59,23 +59,110 @@
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <!-- <div class="absolute right-0 z-10 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
-                                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="sort-menu">
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Name</a>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Date modified</a>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Date created</a>
-                                </div>
-                            </div> -->
                     </div>
                 </div>
             </div>
-            <ul class="relative z-0 border-b border-gray-200 divide-y divide-gray-200">
-                @foreach ($posts as $post)
-                <li>
-                    <a class="block py-5 pl-4 pr-6 hover:bg-gray-50 sm:py-6 sm:pl-6 lg:pl-8 xl:pl-6" href="{{route('posts.edit', $post->id)}}">{{$post->title}}</a>
-                </li>
-                @endforeach
-            </ul>
+            <div class="sm:hidden">
+                <ul class="divide-y divide-gray-100">
+                    @foreach ($posts as $post)
+                    <li>
+                        <a href="{{route('posts.edit', $post->id)}}" class="flex items-center justify-between px-4 py-4 group hover:bg-gray-50 sm:px-6">
+                            <span class="flex items-center space-x-3 truncate">
+                                <span class="{{$post->active ? 'bg-green-100' : 'bg-pink-100'}} flex items-center justify-center w-4 h-4 rounded-full" aria-hidden="true">
+                                    <span class="{{$post->active ? 'bg-green-400' : 'bg-pink-400'}} w-2 h-2 bg-green-400 rounded-full"></span>
+                                </span>
+                                <span class="text-sm font-medium leading-6 truncate">
+                                    {{$post->title}}
+                                </span>
+                            </span>
+                            <!-- Heroicon name: solid/chevron-right -->
+                            <svg class="w-5 h-5 ml-4 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+
+            <div class="hidden sm:block">
+                <div class="inline-block min-w-full align-middle border-b border-gray-200">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr>
+                                <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                    <span class="lg:pl-2">Title</span>
+                                </th>
+                                <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                    Language
+                                </th>
+                                <th class="hidden px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase border-b border-gray-200 md:table-cell bg-gray-50">
+                                    Publish date
+                                </th>
+                                <th class="py-3 pr-6 text-xs font-medium tracking-wider text-right text-gray-500 uppercase border-b border-gray-200 bg-gray-50"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-100">
+                            @foreach ($posts as $post)
+                            <tr>
+                                <td class="w-full px-6 py-3 text-sm font-medium text-gray-900 max-w-0 whitespace-nowrap">
+                                    <div class="flex items-center space-x-3 lg:pl-2">
+                                        <span class="{{$post->active ? 'bg-green-100' : 'bg-pink-100'}} flex items-center justify-center w-4 h-4 rounded-full" aria-hidden="true">
+                                            <span class="{{$post->active ? 'bg-green-400' : 'bg-pink-400'}} w-2 h-2 bg-green-400 rounded-full"></span>
+                                        </span>
+                                        <a href="{{route('posts.show', $post->slug)}}" class="truncate hover:text-gray-600">
+                                            <span>
+                                                {{$post->title}}
+                                            </span>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-3 text-sm font-medium text-gray-500">
+                                    {{$post->language}}
+                                </td>
+                                <td class="hidden px-6 py-3 text-sm text-right text-gray-500 md:table-cell whitespace-nowrap">
+                                    @datetime($post->published_at)
+                                </td>
+                                <td class="pr-6">
+                                    <div class="relative flex items-center justify-end">
+                                        <div x-data="{ open: false }">
+                                            <button @click="open = true" :aria-haspopup="open" class="inline-flex items-center justify-center w-8 h-8 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                                                <span class="sr-only">Open options</span>
+                                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                                                </svg>
+                                            </button>
+                                            <div x-show="open" @click.away="open = false" :class="{'opacity-100 scale-100': open, 'opacity-0 scale-95 pointer-events-none': !open}" class="absolute z-10 w-48 mx-3 mt-1 transition duration-75 ease-in origin-top-right bg-white divide-y divide-gray-200 rounded-md shadow-lg right-10 top-3 ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="post-options-menu">
+                                                <div class="py-1" role="none">
+                                                    <a href="{{route('posts.edit', $post->id)}}" class="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-gray-100 hover:text-gray-900" role="menuitem">
+                                                        <!-- Heroicon name: solid/pencil-alt -->
+                                                        <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                            <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                                            <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                                                        </svg>
+                                                        Edit
+                                                    </a>
+                                                </div>
+                                                <div class="py-1" role="none">
+                                                    <a href="{{route('posts.delete', $post->id)}}" class="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-gray-100 hover:text-gray-900" role="menuitem">
+                                                        <!-- Heroicon name: solid/trash -->
+                                                        <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                        </svg>
+                                                        Delete
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <div class="px-4 pb-4 border-b border-gray-200">
                 {{$posts->links('home.pagination')}}
             </div>
