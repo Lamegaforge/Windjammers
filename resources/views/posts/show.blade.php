@@ -34,7 +34,7 @@
                 </div>
             </header>
             <div class="pt-10 pb-8 prose lg:pt-14 max-w-none lg:prose-xl">
-                <img class="max-w-full pb-3 mx-auto" src="{{$post->thumbnail ?? '/images/beach.jpg'}}" />
+                <img class="max-w-full pb-3 mx-auto" src="{{ asset('images/thumbnails/' . $post->thumbnail) ?? '/images/beach.jpg'}}" />
                 @markdown($post->content)
             </div>
         </article>

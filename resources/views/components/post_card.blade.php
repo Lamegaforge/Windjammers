@@ -1,6 +1,6 @@
 <a href="{{route('posts.show', $post->slug)}}" class="flex flex-col overflow-hidden transition-all duration-300 ease-in-out transform rounded-lg shadow-lg md:hover:-translate-y-2 md:hover:shadow-xl">
     <div class="flex-shrink-0 ">
-        <img class="object-cover w-full h-48" src="{{$post->thumbnail ?? '/images/small_beach.jpg'}}" alt="">
+        <img class="object-cover w-full h-48" src="{{ $post->thumbnail ? asset('images/thumbnails/' . $post->thumbnail) : '/images/beach.jpg'}}" alt="">
     </div>
     <div class="flex flex-col justify-between flex-1 p-6 bg-white">
         <div class="flex-1">
