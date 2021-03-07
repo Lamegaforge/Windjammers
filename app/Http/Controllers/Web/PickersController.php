@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use View;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PickersController extends Controller
@@ -71,7 +72,7 @@ class PickersController extends Controller
         return View::make('pickers.player', ['players' => $players]);
     }
 
-    public function stageAndPlayer()
+    public function stageAndPlayer(Request $request)
     {
         $players = [
             [
@@ -127,6 +128,26 @@ class PickersController extends Controller
             ]
         ];
 
-        return View::make('pickers.stage_player', ['stages' => $stages, 'players' => $players]);
+        $constraints = [
+            'Player obligatoire.',
+            'Player & stage interdit.',
+            'Normal',
+            'stage obligatoire.',
+            'Normal',
+            'Normal',
+            'stage interdit.',
+        ];
+
+        $index = --$request->round;
+
+        $constraint = $constraints[$index] ?? null;
+
+        array_unshift($constraints, $constraint);
+
+        return View::make('pickers.stage_player', [
+            'stages' => $stages, 
+            'players' => $players,
+            'constraints' => $constraints,
+        ]);
     }
 }
