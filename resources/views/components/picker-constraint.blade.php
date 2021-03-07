@@ -18,7 +18,6 @@
             started: false,
             stopped: true,
             start() {
-                result = items[0];
                 items = this.shuffle(items);
                 let i = 0;
                 let self = this;
@@ -33,7 +32,6 @@
 
                 setTimeout(function() {
                     clearInterval(intervalHandle);
-                    self.item = this.result;
                     self.stopped = true;
                     confetti({
                         origin: {

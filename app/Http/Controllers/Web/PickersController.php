@@ -129,20 +129,13 @@ class PickersController extends Controller
         ];
 
         $constraints = [
+            'Normal',
+            'Player obligatoire.',
+            'Stage obligatoire.',
             'Player obligatoire.',
             'Player & stage interdit.',
-            'Normal',
-            'stage obligatoire.',
-            'Normal',
-            'Normal',
-            'stage interdit.',
+            'Player & stage obligatoire.',
         ];
-
-        $index = --$request->round;
-
-        $constraint = $constraints[$index] ?? null;
-
-        array_unshift($constraints, $constraint);
 
         return View::make('pickers.stage_player', [
             'stages' => $stages, 
