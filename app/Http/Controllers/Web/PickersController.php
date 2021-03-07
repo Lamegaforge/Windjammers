@@ -129,10 +129,11 @@ class PickersController extends Controller
         ];
 
         $constraints = [
-            'Normal',
+            'Normal.',
             'Player obligatoire.',
+            'Player interdit.',
             'Stage obligatoire.',
-            'Player obligatoire.',
+            'Stage interdit.',
             'Player & stage interdit.',
             'Player & stage obligatoire.',
         ];
