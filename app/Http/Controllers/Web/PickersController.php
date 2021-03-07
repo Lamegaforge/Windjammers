@@ -130,12 +130,12 @@ class PickersController extends Controller
 
         $constraints = [
             'Normal.',
-            'Player obligatoire.',
-            'Player interdit.',
+            'Character obligatoire.',
+            'Character interdit.',
             'Stage obligatoire.',
             'Stage interdit.',
-            'Player & stage interdit.',
-            'Player & stage obligatoire.',
+            'Stage & character interdit.',
+            'Stage & character obligatoire.',
         ];
 
         return View::make('pickers.stage_player', [

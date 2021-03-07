@@ -18,7 +18,7 @@
             <x-picker :items="$stages" />
         </div>
         <div>
-            <p class="mb-3 text-center text-white font-display">Player</p>
+            <p class="mb-3 text-center text-white font-display">Character</p>
             <x-picker :items="$players" />
         </div>
     </div>
